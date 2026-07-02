@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doric Jewelry</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Georgia', serif;
+    overflow: hidden;
+}
+
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    margin-top: -60px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.video-wrapper {
+    width: 262px;
+    margin-bottom: 36px;
+}
+
+video {
+    width: 262px;
+    height: auto;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.loading-text {
+    font-size: 26px;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: pulse 1.5s ease-in-out infinite;
+    line-height: 1.3;
+}
+
+.loading-dots {
+    font-size: 26px;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: 3px;
+    height: 1.4em;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.loading-dots::after {
+    content: '';
+    animation: dotContent 1.5s steps(4, end) infinite;
+}
+
+@keyframes dotContent {
+    0% { content: ''; }
+    25% { content: '.'; }
+    50% { content: '..'; }
+    75% { content: '...'; }
+    100% { content: ''; }
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+</style>
+</head>
+<body>
+<div class="loading-container">
+    <div class="video-wrapper">
+        <video autoplay muted playsinline disablePictureInPicture controlsList="nodownload nofullscreen noremoteplayback">
+            <source src="DJ_Logo_Vine_Video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="text-block">
+        <p class="loading-text">Loading Ancient Magic</p>
+        <p class="loading-dots"></p>
+    </div>
+</div>
+
+<script>
+setTimeout(function() {
+    window.location.href = 'https://placeholder.com/photo';
+}, 5000);
+</script>
+</body>
+</html>
